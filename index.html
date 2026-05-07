@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>江江教練 AI 辦公室 ｜ 招商合作說明</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#D7CCC8;
+    --bg-alt:#E8DED9;
+    --card:#EFEBE9;
+    --card-hover:#E8E1DD;
+    --subtle:#BCAAA4;
+    --text:#4E342E;
+    --text-strong:#3E2723;
+    --text-soft:#5D4037;
+    --muted:#6D4C3D;
+    --accent:#D88C3A;
+    --accent-light:#D4A574;
+    --radius:12px;
+    --radius-sm:8px;
+    --radius-lg:16px;
+    --shadow:0 4px 16px rgba(93,64,55,.10);
+    --shadow-lg:0 8px 32px rgba(93,64,55,.15);
+    --content-max:1080px;
+    --font-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+    --font-display:"Noto Serif TC","PingFang TC",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-zh);background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+  .container{max-width:var(--content-max);margin:0 auto;padding:0 24px}
+
+  /* Hero */
+  header.hero{padding:96px 0 80px;background:linear-gradient(180deg,var(--bg-alt) 0%,var(--bg) 100%);text-align:center;border-bottom:1px solid var(--subtle)}
+  .badge-top{display:inline-block;padding:6px 16px;background:var(--card);border:1px solid var(--subtle);border-radius:999px;font-size:13px;color:var(--muted);margin-bottom:24px;letter-spacing:.5px}
+  h1{font-family:var(--font-display);font-size:clamp(36px,6vw,56px);font-weight:700;color:var(--text-strong);line-height:1.3;letter-spacing:-.5px;margin-bottom:20px}
+  h1 .accent{color:var(--accent)}
+  .hero p.lead{font-size:19px;color:var(--text-soft);max-width:680px;margin:0 auto 36px;line-height:1.8}
+  .hero-meta{font-size:14px;color:var(--muted);margin-top:16px}
+
+  /* CTA */
+  .btn{display:inline-block;padding:14px 32px;border-radius:999px;font-size:16px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;font-family:inherit}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(216,140,58,.3)}
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(216,140,58,.4)}
+  .btn-secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
+  .btn-secondary:hover{background:var(--accent);color:#fff}
+  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+
+  /* Section */
+  section{padding:80px 0}
+  section.alt{background:var(--bg-alt)}
+  h2{font-family:var(--font-display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--text-strong);margin-bottom:16px;text-align:center;letter-spacing:-.3px}
+  h2 + .section-lead{font-size:17px;color:var(--text-soft);text-align:center;max-width:640px;margin:0 auto 48px}
+
+  /* 三層產品 */
+  .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+  .tier{background:var(--card);border-radius:var(--radius-lg);padding:32px 28px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;position:relative;border:1px solid transparent}
+  .tier:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
+  .tier.featured{border-color:var(--accent);background:linear-gradient(180deg,#F5EDE5 0%,var(--card) 100%)}
+  .tier-step{font-size:13px;color:var(--muted);letter-spacing:1.5px;margin-bottom:8px;text-transform:uppercase}
+  .tier-name{font-family:var(--font-display);font-size:24px;font-weight:600;color:var(--text-strong);margin-bottom:6px}
+  .tier-price{font-size:28px;color:var(--accent);font-weight:700;margin:14px 0;letter-spacing:-.5px}
+  .tier-price small{font-size:14px;color:var(--muted);font-weight:400}
+  .tier-desc{color:var(--text-soft);font-size:15px;margin-bottom:16px;line-height:1.7}
+  .tier ul{list-style:none;padding:0}
+  .tier ul li{padding:8px 0;padding-left:22px;position:relative;font-size:14px;color:var(--text-soft);border-bottom:1px dashed var(--subtle)}
+  .tier ul li:last-child{border-bottom:none}
+  .tier ul li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:8px;border-radius:50%;background:var(--accent-light)}
+
+  /* 合作模式 */
+  .coop-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px;align-items:start}
+  .coop-block{background:var(--card);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow)}
+  .coop-block h3{font-family:var(--font-display);font-size:22px;color:var(--text-strong);margin-bottom:16px;font-weight:600}
+  .coop-block p{color:var(--text-soft);margin-bottom:14px;font-size:15.5px}
+  .quote-box{background:#F5EDE5;border-left:4px solid var(--accent);padding:20px 24px;border-radius:var(--radius);margin:24px 0;font-size:15.5px;color:var(--text-strong);line-height:1.85}
+  .quote-box strong{color:var(--accent);font-weight:600}
+
+  /* 流程步驟 */
+  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;counter-reset:flow}
+  .flow-step{background:var(--card);border-radius:var(--radius-lg);padding:24px 20px;text-align:center;box-shadow:var(--shadow);position:relative;counter-increment:flow}
+  .flow-step::before{content:counter(flow);display:inline-block;width:36px;height:36px;line-height:36px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:16px;margin-bottom:14px;font-family:var(--font-display)}
+  .flow-step h4{font-size:16px;color:var(--text-strong);margin-bottom:8px;font-weight:600}
+  .flow-step p{font-size:13.5px;color:var(--muted);line-height:1.65}
+
+  /* 分潤表 */
+  .split-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);margin-top:24px}
+  .split-table th{background:var(--accent);color:#fff;padding:16px 20px;text-align:left;font-size:15px;font-weight:600}
+  .split-table td{padding:16px 20px;border-bottom:1px solid var(--subtle);font-size:15px;color:var(--text-soft)}
+  .split-table tr:last-child td{border-bottom:none}
+  .split-table tr:hover td{background:var(--card-hover)}
+
+  /* 適合對象 */
+  .target-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .target-card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+  .target-card .icon{font-size:28px;margin-bottom:8px;display:block}
+  .target-card h4{font-size:16px;color:var(--text-strong);margin-bottom:6px;font-weight:600}
+  .target-card p{font-size:14px;color:var(--muted);line-height:1.65}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:32px auto 0}
+  details{background:var(--card);border-radius:var(--radius);padding:18px 22px;margin-bottom:12px;box-shadow:var(--shadow);border:1px solid transparent;transition:border-color .2s}
+  details[open]{border-color:var(--accent-light)}
+  summary{font-weight:600;color:var(--text-strong);cursor:pointer;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  summary::after{content:"＋";color:var(--accent);font-size:20px;font-weight:400;transition:transform .2s}
+  details[open] summary::after{content:"−"}
+  details p{margin-top:12px;color:var(--text-soft);font-size:15px;line-height:1.8}
+
+  /* Footer CTA */
+  footer{padding:80px 0 60px;background:var(--bg-alt);text-align:center;border-top:1px solid var(--subtle)}
+  footer h2{margin-bottom:16px}
+  footer .lead{font-size:17px;color:var(--text-soft);max-width:580px;margin:0 auto 36px}
+  .footer-meta{margin-top:48px;font-size:13px;color:var(--muted);line-height:1.8}
+
+  /* RWD */
+  @media (max-width:768px){
+    section{padding:56px 0}
+    header.hero{padding:64px 0 56px}
+    .tier-row,.coop-grid,.flow,.target-list{grid-template-columns:1fr}
+    .flow-step{text-align:left;padding-left:64px}
+    .flow-step::before{position:absolute;left:20px;top:24px;margin:0}
+    .container{padding:0 20px}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <span class="badge-top">給合作夥伴與經銷商的招商說明</span>
+    <h1>讓 AI 來學你<br><span class="accent">不再 AI 焦慮</span></h1>
+    <p class="lead">
+      我賣的不是 AI 工具，是<strong>「讓你能累積知識的系統」</strong>。<br>
+      以前我用照片放大別人的亮點，現在我用 AI 放大別人的亮點。
+    </p>
+    <div class="cta-row">
+      <a href="#partner" class="btn btn-primary">我想合辦講座</a>
+      <a href="#tiers" class="btn btn-secondary">看三層產品線</a>
+    </div>
+    <p class="hero-meta">江江教練 ｜ 隱性知識提煉師</p>
+  </div>
+</header>
+
+<section id="tiers">
+  <div class="container">
+    <h2>三層產品線</h2>
+    <p class="section-lead">
+      從免費聚眾，到 1000 元裝機體驗，到進階工作坊。<br>
+      每一層都是下一層的入口，每一層都能獨立運作。
+    </p>
+
+    <div class="tier-row">
+      <div class="tier">
+        <div class="tier-step">第一層</div>
+        <div class="tier-name">免費講座</div>
+        <div class="tier-price">免費 <small>／聚眾對焦</small></div>
+        <p class="tier-desc">線上 1 小時直播為主，講「網頁版 AI 跟桌面版 Agent 的差異」，把對的人帶進來。</p>
+        <ul>
+          <li>線上直播 60 分鐘</li>
+          <li>主題依合辦人調整</li>
+          <li>講完預告下一層裝機課</li>
+          <li>適合社群、扶輪社、合作夥伴揪團</li>
+        </ul>
+      </div>
+
+      <div class="tier featured">
+        <div class="tier-step">第二層 ★ 主推</div>
+        <div class="tier-name">AI 辦公室裝機</div>
+        <div class="tier-price">1,000 <small>元 ／ 一次付清</small></div>
+        <p class="tier-desc">Agent 零基礎線上裝機 + 最基礎技能包應用工作坊。把 AI 真的裝進你的電腦，跑出第一份輸出。</p>
+        <ul>
+          <li>線上裝機（Codex / Claude Code）</li>
+          <li>7 位 AI 助理一次裝好</li>
+          <li>最基礎技能包應用教學</li>
+          <li>半年內免費更新與技能包</li>
+          <li>當天能跑出第一份輸出</li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <div class="tier-step">第三層</div>
+        <div class="tier-name">專題工作坊</div>
+        <div class="tier-price">3,980 <small>元起 ／ 半天到一天</small></div>
+        <p class="tier-desc">把 AI 真正融入自己的工作流。網站、品牌、客戶儀表板、給老闆的駕馭策略。</p>
+        <ul>
+          <li>3 小時版：3,980 元</li>
+          <li>5 小時版：5,980 元</li>
+          <li>同場附贈 1000 元 AI 辦公室</li>
+          <li>當天裝好、現場跑、不會退費</li>
+          <li>課後 14 天 Email 諮詢</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="partner">
+  <div class="container">
+    <h2>合作夥伴怎麼參與</h2>
+    <p class="section-lead">
+      你有社群、有名單、有受眾，我有課程內容跟金流系統。<br>
+      四步驟，輕鬆上手。
+    </p>
+
+    <div class="flow">
+      <div class="flow-step">
+        <h4>在你群開免費講座</h4>
+        <p>江江主講、你揪團。內容客製成你受眾感興趣的主題。</p>
+      </div>
+      <div class="flow-step">
+        <h4>1000 元裝機課轉單</h4>
+        <p>講完讓有興趣的人接著上 Agent 零基礎裝機課。</p>
+      </div>
+      <div class="flow-step">
+        <h4>傳送門金流分潤</h4>
+        <p>用我的傳送門付費系統，每筆訂單系統自動分潤對半分。</p>
+      </div>
+      <div class="flow-step">
+        <h4>你的人留在你群</h4>
+        <p>學員還是留在你的群裡，後續管理跟關係維護由你掌握。</p>
+      </div>
+    </div>
+
+    <div class="quote-box" style="max-width:760px;margin:48px auto 0">
+      「<strong>你的人，還是在你的群</strong>。後續管理跟客戶關係都還是你的——我只是來幫你的群提供 AI 內容、做轉換、做課程交付。我不搶你的人。」
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>分潤機制</h2>
+    <p class="section-lead">能分潤就分潤，大家有動力，大家有錢賺。</p>
+
+    <table class="split-table">
+      <thead>
+        <tr><th style="width:38%">合作角色</th><th style="width:32%">負責什麼</th><th>分潤</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>經銷商揪團</strong>（社群主、合作夥伴）</td>
+          <td>免費講座聚眾＋ 1000 元基礎課推廣</td>
+          <td><strong>對半分</strong>（500 / 500）</td>
+        </tr>
+        <tr>
+          <td><strong>第一線實體裝機者</strong></td>
+          <td>實體陪跑裝機（社區、咖啡廳）</td>
+          <td>執行者 700 / 江江 300</td>
+        </tr>
+        <tr>
+          <td><strong>升級到進階課程</strong></td>
+          <td>把基礎課學員引導到 3,980 進階課</td>
+          <td>推薦人另計分潤（個案議定）</td>
+        </tr>
+        <tr>
+          <td><strong>顧問接案介紹</strong></td>
+          <td>引介中期組織建置、企業顧問</td>
+          <td>視專案規模另議</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--muted)">
+      初期先用「專案合作、拆帳拆帳」的彈性方式，沒有員工負擔。<br>
+      篩選同頻率的人合作——技術能教、方法能教，<strong>人品要相處才知道</strong>。
+    </p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="container">
+    <h2>適合的合作對象</h2>
+    <p class="section-lead">如果你有以下其中一種資源，歡迎找我聊聊。</p>
+
+    <div class="target-list">
+      <div class="target-card">
+        <h4>地方創生／教育社群</h4>
+        <p>田野心學、實驗教育、自學社群、USR 計畫主持人。</p>
+      </div>
+      <div class="target-card">
+        <h4>身心靈療癒／教練</h4>
+        <p>有穩定個案族群，想加 AI 工具讓客戶日常追蹤更好。</p>
+      </div>
+      <div class="target-card">
+        <h4>扶輪社／商會／社團</h4>
+        <p>會員多為自雇者、中小企業主、自由工作者。</p>
+      </div>
+      <div class="target-card">
+        <h4>物業／管委會／里長</h4>
+        <p>需要消化年度活動 KPI、政府補助案、社區共學。</p>
+      </div>
+      <div class="target-card">
+        <h4>企業顧問／引導師</h4>
+        <p>有企業客戶，想把 AI 應用做成可交付的方案。</p>
+      </div>
+      <div class="target-card">
+        <h4>社群主／自媒體經營者</h4>
+        <p>群組裡有大量需要文書整理、品牌打造的會員。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>常見問題</h2>
+
+    <div class="faq">
+      <details>
+        <summary>網頁版 AI 跟桌面版 Agent 差在哪？</summary>
+        <p>網頁版 AI（ChatGPT、Gemini 那些）是聊天機器人，你跟它聊天問東西。桌面版 Agent 是真的進到你電腦裡的數位員工——它讀你的檔案、跑你的工作流、用你的口吻說話。免費講座會帶你完整理解這兩件事。</p>
+      </details>
+      <details>
+        <summary>合作夥伴需要會 AI 嗎？</summary>
+        <p>不需要。你只要負責揪團、開講座入口，內容跟交付都由江江處理。你不用學會 AI 才能合作，這就是經銷商模式的好處。</p>
+      </details>
+      <details>
+        <summary>傳送門金流怎麼運作？</summary>
+        <p>傳送門是台灣本土金流團隊，可以開電子發票、處理稅務、分潤可設定到不同帳號。每筆訂單系統自動拆分，月底結算。江江已用兩年多，穩定可靠。</p>
+      </details>
+      <details>
+        <summary>學員資料會不會被江江帶走？</summary>
+        <p>不會。學員留在合作夥伴的群裡，後續關係維護由你掌握。江江只負責內容、課程、技術交付。這是設計上刻意的——讓你後續管理更輕鬆，也保留你和你受眾的關係。</p>
+      </details>
+      <details>
+        <summary>1,000 元裝機課大概多久？涵蓋什麼？</summary>
+        <p>線上自助裝機約 1-2 小時可完成；實體陪跑工作坊約 3 小時。包含 7 位 AI 助理安裝、最基礎技能包應用教學、第一份輸出實作、半年內免費更新。</p>
+      </details>
+      <details>
+        <summary>3,980 進階工作坊上什麼？</summary>
+        <p>依合作夥伴需求調整。目前已規劃的特色課：給老闆的 AI 駕馭策略課（5 小時／5,980）、自己重做品牌網站＋識別系統、用 AI 做客戶儀表板與情緒日記分析。</p>
+      </details>
+      <details>
+        <summary>怎麼開始？</summary>
+        <p>找江江聊一次。先確認你受眾是誰、感興趣的主題、預計多少人。對齊後我們先排第一場免費講座當試水溫，效果好再擴大合作。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <h2>想聊聊合作的可能？</h2>
+    <p class="lead">
+      不論你是社群主、教練、顧問、扶輪社夥伴，<br>
+      只要你有受眾跟想做點不一樣的事，都歡迎找我聊。
+    </p>
+    <div class="cta-row">
+      <a href="https://lin.ee/yourline" class="btn btn-primary">LINE 私訊江江</a>
+      <a href="https://www.threads.net/@jiangjiang_coach" class="btn btn-secondary">看我在 Threads 寫什麼</a>
+    </div>
+    <p class="footer-meta">
+      江江教練 ｜ 隱性知識提煉師<br>
+      AI 辦公室 × 數位分身小聚 × 標籤連結法<br>
+      <span style="opacity:.6">v1.0 ｜ 2026-05-07</span>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
