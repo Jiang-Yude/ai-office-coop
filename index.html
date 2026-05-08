@@ -122,11 +122,31 @@
   footer .lead{font-size:17px;color:var(--text-soft);max-width:580px;margin:0 auto 32px}
   .footer-meta{margin-top:48px;font-size:13px;color:var(--muted);line-height:1.8}
 
+  /* Quality showcase（講座品質保證） */
+  .quality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+  .quality-card{background:var(--card);border-radius:var(--radius-lg);padding:36px 28px;box-shadow:var(--shadow);text-align:center;transition:box-shadow .2s}
+  .quality-card:hover{box-shadow:var(--shadow-lg)}
+  .quality-num{font-family:var(--font-display);font-size:48px;font-weight:700;color:var(--accent);margin-bottom:12px;line-height:1;letter-spacing:-1px}
+  .quality-num small{font-size:18px;color:var(--muted);font-weight:400}
+  .quality-card h4{font-size:17px;color:var(--text-strong);margin-bottom:10px;font-weight:600}
+  .quality-card p{font-size:14.5px;color:var(--text-soft);line-height:1.7}
+
+  /* Case grid（合作案例） */
+  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
+  .case-card{background:var(--card);border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow);transition:box-shadow .2s}
+  .case-card:hover{box-shadow:var(--shadow-lg)}
+  .case-tag{display:inline-block;padding:4px 12px;background:var(--bg-alt);border:1px solid var(--subtle);border-radius:999px;font-size:12px;color:var(--accent);font-weight:600;margin-bottom:14px;letter-spacing:.3px}
+  .case-card h4{font-size:18px;color:var(--text-strong);margin-bottom:14px;font-weight:600;font-family:var(--font-display)}
+  .case-card ul{list-style:none;padding:0}
+  .case-card ul li{padding:8px 0;padding-left:22px;position:relative;font-size:14px;color:var(--text-soft);border-bottom:1px dashed var(--subtle)}
+  .case-card ul li:last-child{border-bottom:none}
+  .case-card ul li::before{content:"→";position:absolute;left:0;top:8px;color:var(--accent-light);font-weight:600}
+
   /* RWD */
   @media (max-width:768px){
     section{padding:52px 0}
     header.hero{padding:60px 0 52px}
-    .tier-row,.flow,.target-list{grid-template-columns:1fr}
+    .tier-row,.flow,.target-list,.quality-grid,.case-grid{grid-template-columns:1fr}
     .tldr{padding:28px 24px}
     .tldr-row{grid-template-columns:1fr;gap:4px 0}
     .tldr-row .k{margin-top:10px}
@@ -169,6 +189,8 @@
         <div class="v">使用 Portaly（傳送門）收款，分潤系統自動拆帳</div>
         <div class="k">學員</div>
         <div class="v"><strong style="color:var(--accent)">在你的主場上長大</strong>——關係跟著你走，我們在原有的服務線上做加法</div>
+        <div class="k">講座</div>
+        <div class="v">1 小時 = 50 分鐘乾貨 + 10 分鐘 QA，不是大型推銷會</div>
       </div>
     </div>
   </div>
@@ -204,6 +226,31 @@
 
     <div class="quote-box">
       你經營社群，我帶課程進場。學員的信任跟著你走——我們在你的主場上<strong>做加法</strong>，你多一條 AI 服務軌道，而不是多一份管理負擔。
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>講座是什麼樣子的？</h2>
+    <p class="section-lead">不是業配講座，不是大型推銷會。一小時就是一小時的內容。</p>
+
+    <div class="quality-grid">
+      <div class="quality-card">
+        <div class="quality-num">1 <small>年</small></div>
+        <h4>線上講座經驗</h4>
+        <p>已在我自己社群連續一年、每月兩場免費線上講座。線上控場、互動節奏、QA 處理都熟。</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-num">50 / 10</div>
+        <h4>講座時間配比</h4>
+        <p>1 小時講座 = 50 分鐘滿滿乾貨 + 10 分鐘 QA。最後幾分鐘才會稍微提到後續課程的可能性。</p>
+      </div>
+      <div class="quality-card">
+        <div class="quality-num">+ 1</div>
+        <h4>對揪團方是加分</h4>
+        <p>你為你的朋友、為你的社群找了一個優質的免費講座。學員聽完會覺得：「還好我老師找了這個。」</p>
+      </div>
     </div>
   </div>
 </section>
@@ -254,6 +301,51 @@
           <li>升級分潤另計</li>
         </ul>
       </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>已經在合作的方向</h2>
+    <p class="section-lead">
+      我希望跟揪團的講師有深度合作——不是辦一場就走，<br>
+      是讓我的課程延續你原本的服務，用 AI 放大你的亮點。
+    </p>
+
+    <div class="case-grid">
+      <div class="case-card">
+        <span class="case-tag">在地商家／地方創生</span>
+        <h4>跟商家召集人合作</h4>
+        <ul>
+          <li>商家「手機 + AI」商品拍攝課</li>
+          <li>商家粉專行銷宣傳工作坊</li>
+          <li>商家自己做平面視覺設計</li>
+        </ul>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">身心靈／療癒</span>
+        <h4>跟身心靈老師合作</h4>
+        <ul>
+          <li>用 AI 寫情緒日記</li>
+          <li>客觀觀察自己的身心變化</li>
+          <li>客戶月報儀表板</li>
+        </ul>
+      </div>
+      <div class="case-card">
+        <span class="case-tag">教練／講師／顧問</span>
+        <h4>跟內容工作者合作</h4>
+        <ul>
+          <li>把講師原本的服務 AI 化</li>
+          <li>建客戶資料庫與 SOP</li>
+          <li>放大講師原有的內容亮點</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-box" style="margin-top:40px">
+      把 AI 直接導入你和你客戶之間——幫你把<strong>商業模式、產品、交付過程</strong>用 AI 優化。<br>
+      這是我跟一般「辦一場講座就走」的合作不一樣的地方。
     </div>
   </div>
 </section>
@@ -339,7 +431,15 @@
     <div class="faq">
       <details>
         <summary>合作夥伴需要會 AI 嗎？</summary>
-        <p>不需要。你只負責揪團、開講座入口，內容跟交付都由江江處理。你不用先學會 AI，這就是聯名推廣的好處。</p>
+        <p>不需要會 AI、不需要架網站、不需要先準備教材。你只負責揪團、開講座入口；課程設計、Portaly 金流、發票稅務、技術交付都由江江處理。</p>
+      </details>
+      <details>
+        <summary>講座會大量推銷後續課程嗎？</summary>
+        <p>不會。我講座的時間配比固定是 50 分鐘乾貨 + 10 分鐘 QA，最後幾分鐘才會稍微提到後續課程的可能性。我已經在自己社群連續一年、每月兩場免費線上講座，乾貨密度是經得起檢驗的——你為你的社群找了一個優質講座，這對你是加分，不是消耗信任。</p>
+      </details>
+      <details>
+        <summary>合作可以延伸到單次講座以外嗎？</summary>
+        <p>可以、而且我希望這樣。我不只想辦一場講座就走——我希望我的課程能延續你原本的服務。例如跟在地商家召集人合開「商家手機 + AI 拍攝課」、「商家粉專行銷工作坊」；跟身心靈老師合開「用 AI 寫情緒日記」「客戶月報儀表板」。把 AI 直接導入你跟你客戶之間，幫你把商業模式、產品、交付過程用 AI 優化。</p>
       </details>
       <details>
         <summary>Portaly（傳送門）金流怎麼運作？分潤可靠嗎？</summary>
@@ -384,7 +484,7 @@
     <p class="footer-meta">
       AI 辦公室 ｜ 聯名講座 聯合推廣計劃<br>
       江江教練主理<br>
-      <span style="opacity:.6">v1.4 ｜ 2026-05-07</span>
+      <span style="opacity:.6">v1.5 ｜ 2026-05-07</span>
     </p>
   </div>
 </footer>
