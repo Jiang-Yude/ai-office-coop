@@ -1,581 +1,1791 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex, nofollow">
-<title>AI 辦公室 ｜ 聯名講座 聯合推廣計劃</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#D7CCC8;
-    --bg-alt:#E8DED9;
-    --card:#EFEBE9;
-    --card-hover:#E8E1DD;
-    --subtle:#BCAAA4;
-    --text:#4E342E;
-    --text-strong:#3E2723;
-    --text-soft:#5D4037;
-    --muted:#6D4C3D;
-    --accent:#D88C3A;
-    --accent-light:#D4A574;
-    --radius:12px;
-    --radius-sm:8px;
-    --radius-lg:16px;
-    --shadow:0 4px 16px rgba(93,64,55,.10);
-    --shadow-lg:0 8px 32px rgba(93,64,55,.15);
-    --content-max:1080px;
-    --font-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
-    --font-display:"Noto Serif TC","PingFang TC",serif;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>合作推廣計畫｜江江教練的 AI 辦公室</title>
+  <meta name="description" content="我們一起升級。你用 AI 辦公室整理你的方法、你的客戶用 AI 辦公室累積他的紀錄，兩邊合起來做得到以前做不到的事。">
+  <style>
+/* ==========================================================================
+   建立你的 AI 辦公室 — 官網樣式
+   色系：奶茶（奶茶知識風）
+   來源：_agent/skills/spring-editor/references/14-pres-styles.md
+   ========================================================================== */
+
+:root {
+  --bg:           #D7CCC8;  /* 深米色（牛皮紙）*/
+  --bg-alt:       #E8DED9;  /* 交替區段背景（稍淺）*/
+  --text:         #4E342E;  /* 濃咖啡字（加深）*/
+  --text-strong:  #3E2723;  /* 更深的咖啡（大標題用）*/
+  --text-soft:    #5D4037;  /* 次要文字（拉進主文區）*/
+  --accent:       #D88C3A;  /* 焦糖（標題、重點、按鈕）*/
+  --accent-light: #D4A574;  /* 暖金（次要按鈕）*/
+  --card:         #EFEBE9;  /* 卡片背景（奶咖色）*/
+  --card-hover:   #E8E1DD;  /* 卡片 hover */
+  --subtle:       #BCAAA4;  /* 淺咖啡線條 */
+  --muted:        #6D4C3D;  /* 說明文字、次要文字（加深）*/
+  --success:      #7CB342;  /* 成功色（綠）*/
+
+  --radius:       12px;
+  --radius-sm:    8px;
+  --radius-lg:    16px;
+
+  --shadow:       0 4px 16px rgba(93, 64, 55, 0.1);
+  --shadow-lg:    0 8px 32px rgba(93, 64, 55, 0.15);
+
+  --font-zh:      "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  --font-display: "Noto Serif TC", "PingFang TC", serif;
+
+  --content-max:  1080px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-zh);
+  font-size: 16px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+.container {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ==========================================================================
+   Top Navigation
+   ========================================================================== */
+
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(215, 204, 200, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--subtle);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 0.03em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-cta {
+  background: var(--accent);
+  color: #FFF8F0 !important;
+  padding: 8px 18px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.nav-cta:hover {
+  background: var(--accent-light);
+  color: var(--text) !important;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 16px;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--font-zh);background:var(--bg);color:var(--text);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
-  .container{max-width:var(--content-max);margin:0 auto;padding:0 24px}
-
-  /* Hero */
-  header.hero{padding:96px 0 72px;background:linear-gradient(180deg,var(--bg-alt) 0%,var(--bg) 100%);text-align:center;border-bottom:1px solid var(--subtle)}
-  .badge-top{display:inline-block;padding:6px 16px;background:var(--card);border:1px solid var(--subtle);border-radius:999px;font-size:13px;color:var(--muted);margin-bottom:24px;letter-spacing:.5px}
-  h1{font-family:var(--font-display);font-size:clamp(34px,5.6vw,52px);font-weight:700;color:var(--text-strong);line-height:1.3;letter-spacing:-.5px;margin-bottom:18px}
-  h1 .accent{color:var(--accent)}
-  .hero p.lead{font-size:18px;color:var(--text-soft);max-width:660px;margin:0 auto 32px;line-height:1.8}
-  .hero-meta{font-size:14px;color:var(--muted);margin-top:12px}
-
-  /* CTA */
-  .btn{display:inline-block;padding:14px 32px;border-radius:999px;font-size:16px;font-weight:500;text-decoration:none;border:none;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;font-family:inherit}
-  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 4px 12px rgba(216,140,58,.3)}
-  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(216,140,58,.4)}
-  .btn-secondary{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
-  .btn-secondary:hover{background:var(--accent);color:#fff}
-  .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-
-  /* Section */
-  section{padding:72px 0}
-  section.alt{background:var(--bg-alt)}
-  h2{font-family:var(--font-display);font-size:clamp(28px,4vw,36px);font-weight:700;color:var(--text-strong);margin-bottom:14px;text-align:center;letter-spacing:-.3px}
-  h2 + .section-lead{font-size:17px;color:var(--text-soft);text-align:center;max-width:640px;margin:0 auto 44px}
-
-  /* TL;DR 一張卡片 */
-  .tldr{max-width:780px;margin:48px auto 0;background:var(--card);border-radius:var(--radius-lg);padding:36px 40px;box-shadow:var(--shadow-lg);border:1px solid var(--accent-light)}
-  .tldr h3{font-family:var(--font-display);font-size:22px;color:var(--text-strong);margin-bottom:18px;text-align:center;font-weight:600}
-  .tldr-row{display:grid;grid-template-columns:auto 1fr;gap:14px 20px;font-size:16px}
-  .tldr-row .k{color:var(--accent);font-weight:600;white-space:nowrap}
-  .tldr-row .v{color:var(--text-soft);line-height:1.7}
-
-  /* 流程步驟 */
-  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:24px;counter-reset:flow}
-  .flow-step{background:var(--card);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--shadow);position:relative;counter-increment:flow}
-  .flow-step::before{content:counter(flow);display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#fff;font-weight:700;font-size:18px;margin-bottom:16px;font-family:var(--font-display)}
-  .flow-step h4{font-size:17px;color:var(--text-strong);margin-bottom:10px;font-weight:600;line-height:1.4}
-  .flow-step p{font-size:14px;color:var(--text-soft);line-height:1.7}
-  .flow-step .who{font-size:12px;color:var(--accent);font-weight:600;letter-spacing:.5px;margin-bottom:6px;text-transform:uppercase}
-
-  /* 合作金句 */
-  .quote-box{max-width:780px;margin:40px auto 0;background:#F5EDE5;border-left:4px solid var(--accent);padding:24px 28px;border-radius:var(--radius);font-size:16px;color:var(--text-strong);line-height:1.85}
-  .quote-box strong{color:var(--accent);font-weight:600}
-
-  /* 三層產品 */
-  .tier-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
-  .tier{background:var(--card);border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow);transition:box-shadow .2s,transform .2s;position:relative;border:1px solid transparent}
-  .tier:hover{box-shadow:var(--shadow-lg);transform:translateY(-2px)}
-  .tier.featured{border-color:var(--accent);background:linear-gradient(180deg,#F5EDE5 0%,var(--card) 100%)}
-  .tier-step{font-size:12px;color:var(--muted);letter-spacing:1.5px;margin-bottom:8px;text-transform:uppercase;font-weight:600}
-  .tier.featured .tier-step{color:var(--accent)}
-  .tier-name{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--text-strong);margin-bottom:4px}
-  .tier-price{font-size:26px;color:var(--accent);font-weight:700;margin:12px 0;letter-spacing:-.5px}
-  .tier-price small{font-size:13px;color:var(--muted);font-weight:400}
-  .tier-desc{color:var(--text-soft);font-size:14.5px;margin-bottom:14px;line-height:1.7}
-  .tier ul{list-style:none;padding:0}
-  .tier ul li{padding:7px 0;padding-left:20px;position:relative;font-size:13.5px;color:var(--text-soft);border-bottom:1px dashed var(--subtle)}
-  .tier ul li:last-child{border-bottom:none}
-  .tier ul li::before{content:"";position:absolute;left:0;top:14px;width:7px;height:7px;border-radius:50%;background:var(--accent-light)}
-
-  /* 分潤表 */
-  .split-table{width:100%;border-collapse:collapse;background:var(--card);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);margin-top:24px}
-  .split-table th{background:var(--accent);color:#fff;padding:16px 20px;text-align:left;font-size:15px;font-weight:600}
-  .split-table td{padding:16px 20px;border-bottom:1px solid var(--subtle);font-size:15px;color:var(--text-soft);vertical-align:top}
-  .split-table tr:last-child td{border-bottom:none}
-  .split-table tr:hover td{background:var(--card-hover)}
-  .split-table strong{color:var(--text-strong)}
-  .split-note{text-align:center;margin-top:20px;font-size:14px;color:var(--muted);line-height:1.8}
-
-  /* 適合對象 */
-  .target-list{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}
-  .target-card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-  .target-card h4{font-size:16px;color:var(--text-strong);margin-bottom:6px;font-weight:600}
-  .target-card p{font-size:14px;color:var(--muted);line-height:1.65}
-
-  /* FAQ */
-  .faq{max-width:760px;margin:24px auto 0}
-  details{background:var(--card);border-radius:var(--radius);padding:18px 22px;margin-bottom:12px;box-shadow:var(--shadow);border:1px solid transparent;transition:border-color .2s}
-  details[open]{border-color:var(--accent-light)}
-  summary{font-weight:600;color:var(--text-strong);cursor:pointer;font-size:16px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-  summary::after{content:"＋";color:var(--accent);font-size:20px;font-weight:400;transition:transform .2s;flex-shrink:0}
-  details[open] summary::after{content:"−"}
-  details p{margin-top:12px;color:var(--text-soft);font-size:15px;line-height:1.8}
-
-  /* Footer CTA */
-  footer{padding:72px 0 56px;background:var(--bg-alt);text-align:center;border-top:1px solid var(--subtle)}
-  footer h2{margin-bottom:14px}
-  footer .lead{font-size:17px;color:var(--text-soft);max-width:580px;margin:0 auto 32px}
-  .footer-meta{margin-top:48px;font-size:13px;color:var(--muted);line-height:1.8}
-
-  /* Quality showcase（講座品質保證） */
-  .quality-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
-  .quality-card{background:var(--card);border-radius:var(--radius-lg);padding:36px 28px;box-shadow:var(--shadow);text-align:center;transition:box-shadow .2s}
-  .quality-card:hover{box-shadow:var(--shadow-lg)}
-  .quality-num{font-family:var(--font-display);font-size:48px;font-weight:700;color:var(--accent);margin-bottom:12px;line-height:1;letter-spacing:-1px}
-  .quality-num small{font-size:18px;color:var(--muted);font-weight:400}
-  .quality-card h4{font-size:17px;color:var(--text-strong);margin-bottom:10px;font-weight:600}
-  .quality-card p{font-size:14.5px;color:var(--text-soft);line-height:1.7}
-
-  /* Case grid（合作案例） */
-  .case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:24px}
-  .case-card{background:var(--card);border-radius:var(--radius-lg);padding:28px 26px;box-shadow:var(--shadow);transition:box-shadow .2s}
-  .case-card:hover{box-shadow:var(--shadow-lg)}
-  .case-tag{display:inline-block;padding:4px 12px;background:var(--bg-alt);border:1px solid var(--subtle);border-radius:999px;font-size:12px;color:var(--accent);font-weight:600;margin-bottom:14px;letter-spacing:.3px}
-  .case-card h4{font-size:18px;color:var(--text-strong);margin-bottom:14px;font-weight:600;font-family:var(--font-display)}
-  .case-card ul{list-style:none;padding:0}
-  .case-card ul li{padding:8px 0;padding-left:22px;position:relative;font-size:14px;color:var(--text-soft);border-bottom:1px dashed var(--subtle)}
-  .case-card ul li:last-child{border-bottom:none}
-  .case-card ul li::before{content:"→";position:absolute;left:0;top:8px;color:var(--accent-light);font-weight:600}
-
-  /* RWD */
-  @media (max-width:768px){
-    section{padding:52px 0}
-    header.hero{padding:60px 0 52px}
-    .tier-row,.flow,.target-list,.quality-grid,.case-grid{grid-template-columns:1fr}
-    .tldr{padding:28px 24px}
-    .tldr-row{grid-template-columns:1fr;gap:4px 0}
-    .tldr-row .k{margin-top:10px}
-    .container{padding:0 20px}
+  .nav-links li:not(:last-child) {
+    display: none;
   }
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+.hero {
+  padding: 120px 24px 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(216, 140, 58, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6.5vw, 68px);
+  font-weight: 800;
+  color: var(--text-strong);
+  letter-spacing: 0.02em;
+  margin-bottom: 32px;
+  position: relative;
+}
+
+.hero .tagline {
+  font-size: clamp(28px, 3.6vw, 40px);
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  position: relative;
+  text-shadow:
+    2px 2px 4px rgba(62, 39, 35, 0.6),
+    0 4px 18px rgba(62, 39, 35, 0.45);
+}
+
+@keyframes taglineBreath {
+  0%, 100% {
+    text-shadow:
+      1px 1px 0 rgba(62, 39, 35, 0.15),
+      0 3px 12px rgba(216, 140, 58, 0.22);
+  }
+  50% {
+    text-shadow:
+      1px 1px 0 rgba(62, 39, 35, 0.2),
+      0 4px 24px rgba(216, 140, 58, 0.6);
+  }
+}
+
+/* 尊重使用者系統偏好：若偏好減少動畫，關閉呼吸效果 */
+@media (prefers-reduced-motion: reduce) {
+  .hero .tagline {
+    animation: none;
+  }
+}
+
+.hero .sub {
+  font-size: clamp(17px, 1.9vw, 19px);
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.hero .core {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: var(--text-strong);
+  font-weight: 700;
+  margin-bottom: 48px;
+  padding: 20px 28px;
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #FFF8F0;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary:hover {
+  background: #C47A2D;
+  color: #FFF8F0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+
+.btn-secondary:hover {
+  background: var(--accent);
+  color: #FFF8F0;
+  transform: translateY(-2px);
+}
+
+.btn-disabled {
+  background: var(--subtle) !important;
+  color: var(--muted) !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.section {
+  padding: 100px 24px;
+  position: relative;
+}
+
+.section-alt {
+  background: var(--bg-alt);
+}
+
+.section h2 {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 44px);
+  color: var(--text-strong);
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.section-lead {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 56px;
+}
+
+.skill-date {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.staff-card .skill-date {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ==========================================================================
+   Why Section
+   ========================================================================== */
+
+.why-grid {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.why-grid p {
+  margin-bottom: 28px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.why-grid .highlight {
+  padding: 24px 28px;
+  background: var(--card);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-weight: 500;
+  margin-top: 40px;
+  box-shadow: var(--shadow);
+}
+
+/* ==========================================================================
+   Folder Window（資料夾樹狀結構）
+   ========================================================================== */
+
+.folder-window {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  border: 1px solid var(--subtle);
+}
+
+.window-header {
+  background: var(--bg-alt);
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--subtle);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.window-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--subtle);
+}
+
+.window-dot.red    { background: #E8938A; }
+.window-dot.yellow { background: #E9C068; }
+.window-dot.green  { background: #9DC58E; }
+
+.window-title {
+  margin-left: 16px;
+  color: var(--text-soft);
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+}
+
+.folder-tree {
+  padding: 28px 24px;
+  font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 2;
+  overflow-x: auto;
+}
+
+.tree-row {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  gap: 0 20px;
+  align-items: baseline;
+  padding: 4px 10px;
+  border-radius: 4px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.tree-row:hover {
+  background: var(--bg-alt);
+}
+
+.tree-indent {
+  color: var(--subtle);
+  font-weight: 400;
+  white-space: pre;
+  letter-spacing: 0;
+}
+
+.tree-name {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.tree-name .ti {
+  margin-right: 8px;
+}
+
+.tree-row.root .tree-name {
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.tree-row.folder .tree-name {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.tree-meta {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  opacity: 0.9;
+  text-align: right;
+}
+
+.tree-meta::before {
+  content: "# ";
+  opacity: 0.6;
+}
+
+.tree-meta:empty::before {
+  content: "";
+}
+
+.space-note {
+  text-align: center;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 17px;
+  margin-top: 48px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.9;
+}
+
+.space-note strong {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+@media (max-width: 720px) {
+  .folder-tree {
+    padding: 20px 12px;
+    font-size: 12px;
+  }
+  .tree-row {
+    grid-template-columns: max-content 1fr;
+    gap: 0 12px;
+    white-space: normal;
+  }
+  .tree-meta {
+    grid-column: 1 / -1;
+    padding-left: 32px;
+    text-align: left;
+    font-size: 11px;
+    margin-top: -4px;
+  }
+  .tree-meta:empty {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Team (員工編制表)
+   ========================================================================== */
+
+.team-group {
+  margin-bottom: 56px;
+}
+
+.team-group:last-child {
+  margin-bottom: 0;
+}
+
+.group-title {
+  font-size: 18px;
+  color: var(--accent);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--subtle);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.staff-card {
+  background: var(--card);
+  padding: 40px 24px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--subtle);
+  position: relative;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow);
+}
+
+.staff-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: var(--card-hover);
+  box-shadow: var(--shadow-lg);
+}
+
+.staff-card h4 {
+  font-size: 19px;
+  color: var(--text-strong);
+  margin-bottom: 10px;
+  font-weight: 700;
+  padding-left: 12px;
+  border-left: 2px solid var(--accent);
+  line-height: 1.3;
+}
+
+.staff-card p {
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.staff-card.entrance {
+  border-color: var(--accent);
+  border-width: 2px;
+  background: linear-gradient(135deg, var(--card) 0%, #F5EBE0 100%);
+}
+
+/* AI 助理獨佔一整列的大卡 */
+.team-featured {
+  margin-bottom: 24px;
+}
+
+.staff-card.entrance-big {
+  padding: 32px 40px;
+}
+
+.staff-card.entrance-big h4 {
+  font-size: 28px;
+  padding-left: 0;
+  margin-bottom: 14px;
+}
+
+.staff-card.entrance-big h4::before {
+  display: none;
+}
+
+.staff-card.entrance-big p {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+
+.staff-card.entrance-big p:last-child {
+  margin-bottom: 0;
+}
+
+.role-badge {
+  display: inline-block;
+  background: var(--accent);
+  color: #FFF8F0;
+  padding: 5px 14px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+
+@media (max-width: 600px) {
+  .staff-card.entrance-big {
+    padding: 24px 20px;
+  }
+  .staff-card.entrance-big h4 {
+    font-size: 22px;
+  }
+  .staff-card.entrance-big p {
+    font-size: 15px;
+  }
+}
+
+.staff-card.highlight-card {
+  border-color: var(--accent-light);
+}
+
+.staff-card .tag {
+  display: inline-block;
+  background: var(--accent);
+  color: #FFF8F0;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.staff-card.free-card {
+  border-color: var(--success);
+  background: linear-gradient(135deg, var(--card) 0%, #E8F1DE 100%);
+}
+
+.staff-card .tag-free {
+  display: inline-block;
+  margin-top: 12px;
+  background: var(--success);
+  color: #FFF8F0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.staff-card.future-card {
+  opacity: 0.72;
+  background: #F5F0ED;
+}
+
+.staff-card.future-card:hover {
+  opacity: 1;
+}
+
+.staff-card .tag-future {
+  display: inline-block;
+  margin-top: 12px;
+  background: transparent;
+  color: var(--muted);
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px dashed var(--muted);
+  letter-spacing: 0.08em;
+}
+
+/* ==========================================================================
+   Method List
+   ========================================================================== */
+
+.method-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.method-item {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  margin-bottom: 48px;
+  padding: 28px 32px;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--subtle);
+  transition: border-color 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow);
+}
+
+.method-item:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.method-num {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  min-width: 64px;
+  opacity: 0.85;
+}
+
+.method-body h3 {
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.method-body p {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.method-footer {
+  text-align: center;
+  font-size: 17px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 48px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   品牌標語（manifesto）獨立區塊
+   ========================================================================== */
+
+.manifesto {
+  padding: 128px 24px;
+  text-align: center;
+  background: var(--bg-alt);
+  position: relative;
+}
+
+.manifesto::before,
+.manifesto::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto;
+}
+
+.manifesto::before {
+  margin-bottom: 56px;
+}
+
+.manifesto::after {
+  margin-top: 56px;
+}
+
+.manifesto-lead {
+  font-size: clamp(19px, 2.1vw, 24px);
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+
+.manifesto-main {
+  font-size: clamp(30px, 4.2vw, 48px);
+  color: var(--text-strong);
+  font-weight: 800;
+  line-height: 1.55;
+  margin-bottom: 48px;
+  letter-spacing: 1px;
+}
+
+.manifesto-sub {
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--accent);
+  font-weight: 700;
+  letter-spacing: 0.8px;
+}
+
+@media (max-width: 600px) {
+  .manifesto {
+    padding: 80px 20px;
+  }
+  .manifesto::before,
+  .manifesto::after {
+    width: 48px;
+  }
+  .manifesto::before {
+    margin-bottom: 40px;
+  }
+  .manifesto::after {
+    margin-top: 40px;
+  }
+  .manifesto-main {
+    font-size: 26px;
+    line-height: 1.6;
+  }
+  .manifesto-lead,
+  .manifesto-sub {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .method-item {
+    flex-direction: column;
+    gap: 12px;
+    padding: 24px;
+  }
+  .method-num {
+    min-width: auto;
+  }
+}
+
+/* ==========================================================================
+   Path (升級路徑 — 三層樹狀)
+   ========================================================================== */
+
+.path-tree {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.path-tier {
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--subtle);
+  padding: 26px 32px;
+  box-shadow: var(--shadow);
+  transition: border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+}
+
+.path-tier:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.path-tier.current {
+  border-color: var(--accent);
+  border-width: 2px;
+  background: linear-gradient(135deg, var(--card) 0%, #F5EBE0 100%);
+}
+
+.tier-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--subtle);
+  flex-wrap: wrap;
+}
+
+.tier-stage {
+  display: inline-block;
+  background: var(--subtle);
+  color: var(--text-strong);
+  padding: 4px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.path-tier.current .tier-stage {
+  background: var(--accent);
+  color: #FFF8F0;
+}
+
+.tier-name {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--text-strong);
+  font-weight: 700;
+  flex: 1;
+  min-width: 0;
+}
+
+.tier-current-badge {
+  background: var(--accent);
+  color: #FFF8F0;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.tier-body {
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.tier-roster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tier-roster .role {
+  color: var(--text);
+  background: var(--bg-alt);
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  border: 1px solid var(--subtle);
+  font-weight: 500;
+  transition: transform 0.15s, border-color 0.15s;
+}
+
+.tier-roster .role:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.tier-roster-combo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.combo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 18px;
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--subtle);
+  transition: border-color 0.15s;
+}
+
+.combo-row:hover {
+  border-color: var(--accent);
+}
+
+.combo-title {
+  color: var(--text-strong);
+  font-weight: 700;
+  font-size: 15px;
+  min-width: 160px;
+}
+
+.combo-formula {
+  color: var(--muted);
+  font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+  font-size: 13px;
+}
+
+.tier-arrow {
+  text-align: center;
+  color: var(--accent);
+  font-size: 26px;
+  font-weight: 700;
+  padding: 14px 0;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+.path-message {
+  text-align: center;
+  font-size: 17px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 56px;
+  line-height: 2;
+}
+
+@media (max-width: 640px) {
+  .path-tier {
+    padding: 22px 20px;
+  }
+  .combo-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 14px;
+  }
+  .combo-title {
+    min-width: auto;
+  }
+}
+
+/* ==========================================================================
+   About（關於江江教練）
+   ========================================================================== */
+
+.about-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--card);
+  border-radius: var(--radius);
+  border: 1px solid var(--subtle);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.about-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-photo {
+  width: 100%;
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-content {
+  padding: 36px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-name {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--text-strong);
+  font-weight: 700;
+  padding-left: 14px;
+  border-left: 3px solid var(--accent);
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.about-title {
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.about-desc {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.85;
+  margin-top: 6px;
+}
+
+.about-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.social-link {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  background: transparent;
+}
+
+.social-link:hover {
+  background: var(--accent);
+  color: #FFF8F0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .about-content {
+    padding: 28px 24px 32px;
+  }
+  .about-name {
+    font-size: 22px;
+  }
+}
+
+/* ==========================================================================
+   CTA Section
+   ========================================================================== */
+
+.cta-section {
+  background: var(--bg-alt);
+  padding: 120px 24px;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  max-width: 1000px;
+  margin: 56px auto 0;
+}
+
+.cta-card {
+  background: var(--card);
+  padding: 36px 32px;
+  border-radius: var(--radius);
+  border: 1px solid var(--subtle);
+  text-align: center;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  box-shadow: var(--shadow);
+}
+
+.cta-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-card.featured {
+  border-color: var(--accent);
+  border-width: 2px;
+  transform: scale(1.02);
+  background: linear-gradient(135deg, var(--card) 0%, #F5EBE0 100%);
+}
+
+.cta-card.featured:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.cta-card h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  color: var(--text-strong);
+  margin-bottom: 12px;
+  font-weight: 700;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--subtle);
+}
+
+.cta-price {
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.cta-card p {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.cta-card ul {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.cta-micro {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.cta-card ul li {
+  color: var(--text);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.8;
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.cta-card ul li::before {
+  content: "✓";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.site-footer {
+  padding: 56px 24px 40px;
+  text-align: center;
+  border-top: 1px solid var(--subtle);
+  background: var(--bg);
+}
+
+.footer-main {
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  color: var(--muted);
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
+/* ==========================================================================
+   子頁通用樣式（assistants/、team、coop 共用）
+   ========================================================================== */
+
+/* 麵包屑導覽 */
+.breadcrumb {
+  padding: 0 0 20px;
+  font-size: 14px;
+  color: var(--text-soft);
+}
+.breadcrumb a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+.breadcrumb .sep {
+  margin: 0 8px;
+  color: var(--subtle);
+}
+
+/* 小組標題（區塊內分組用，如「檔案處理」「思考工具」） */
+.group-subtitle {
+  display: inline-block;
+  font-size: 15px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+/* 區塊輔助說明（h2 下方的引導文） */
+.section-intro {
+  font-size: 16px;
+  color: var(--text);
+  margin: 10px 0 30px;
+  max-width: 720px;
+  line-height: 1.8;
+}
+
+/* 籌備中卡片 */
+.staff-card.preparing-card {
+  position: relative;
+  border-style: dashed;
+  border-color: var(--subtle);
+}
+.tag-preparing {
+  display: inline-block;
+  padding: 3px 12px;
+  font-size: 12px;
+  background: rgba(216, 140, 58, 0.12);
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  border-radius: 12px;
+  margin-top: 12px;
+  letter-spacing: 0.05em;
+}
+
+/* 佔位提示（給尚未接 URL 的按鈕用） */
+.form-placeholder-note {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.placeholder-tag {
+  display: inline-block;
+  padding: 3px 12px;
+  margin-right: 8px;
+  background: rgba(216, 140, 58, 0.15);
+  border: 1px dashed var(--accent);
+  color: var(--accent);
+  border-radius: 12px;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   合作頁專用樣式（coop.html）
+   ========================================================================== */
+
+/* 引言區塊 */
+.quote-block {
+  background: var(--card);
+  padding: 24px 32px;
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  margin: 20px 0;
+}
+.quote-block .quote-text {
+  font-style: italic;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-strong);
+}
+.quote-block .quote-source {
+  color: var(--muted);
+  text-align: right;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* 角色卡（揪團主／共開課／第一線陪跑） */
+.role-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+.role-card h3 {
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-size: 24px;
+}
+.role-card .role-subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.role-card .role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+.role-card .role-grid > div {
+  background: var(--bg-alt);
+  padding: 16px;
+  border-radius: var(--radius-sm);
+}
+.role-card .role-grid h5 {
+  color: var(--text-strong);
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+.role-card .role-grid p {
+  font-size: 15px;
+  color: var(--text-soft);
+  margin: 0;
+}
+
+/* 「為什麼是我」三特點卡 */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.feature-grid .feature-item {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+}
+.feature-grid .feature-item h5 {
+  color: var(--accent);
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+.feature-grid .feature-item p {
+  color: var(--text-soft);
+  font-size: 15px;
+  margin: 0;
+}
+
+/* CTA 三入口分流 */
+.cta-trio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.cta-trio a {
+  background: var(--card);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  display: block;
+  color: var(--text-strong);
+  transition: all 0.2s;
+}
+.cta-trio a:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-4px);
+}
+.cta-trio h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.cta-trio p {
+  font-size: 14px;
+  color: var(--text-soft);
+  margin: 0;
+}
+.cta-trio a:hover p {
+  color: rgba(255,255,255,0.9);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 72px 20px;
+  }
+  .hero {
+    padding: 80px 24px 72px;
+  }
+  .hero .core {
+    font-size: 18px;
+    padding: 16px 20px;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 24px;
+  }
+  .btn {
+    padding: 14px 24px;
+  }
+  .role-card {
+    padding: 24px 20px;
+  }
+  .quote-block {
+    padding: 20px 24px;
+  }
+}
+
+
+/* tag-new：標示新加入的助理（如 2026-05-24 移入顧問思考的納瓦爾） */
+.staff-card .tag-new {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 3px 12px;
+  background: #D88C3A;
+  color: #FFF8F0;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  letter-spacing: 1px;
+}
+
 </style>
 </head>
 <body>
 
-<header class="hero">
-  <div class="container">
-    <span class="badge-top">給合作夥伴與經銷商的提案</span>
-    <h1>AI 辦公室<br><span class="accent">聯名講座 聯合推廣計劃</span></h1>
-    <p class="lead">
-      你有受眾、有社群、有名單。<br>
-      我有課程、有產品、有交付能力。<br>
-      講座聯名、課程分潤——你的人留你群，我們做加法。
-    </p>
-    <p style="font-size:13.5px;color:var(--muted);margin-top:-18px;margin-bottom:32px">（金流目前預設使用 Portaly 傳送門）</p>
-    <div class="cta-row">
-      <a href="#how" class="btn btn-primary">看怎麼合作</a>
-      <a href="#split" class="btn btn-secondary">看分潤機制</a>
-    </div>
-  </div>
-</header>
+  <nav class="topnav">
+    <a href="https://jiangjiang-ai-office.vercel.app/" class="logo">AI 辦公室</a>
+    <ul class="nav-links">
+      <li><a href="https://jiangjiang-ai-office.vercel.app/">首頁</a></li>
+      <li><a href="https://jiangjiang-ai-office.vercel.app/team.html">AI 助理</a></li>
+      <li><a href="https://jiangjiang-ai-office.vercel.app/learn.html">零基礎教學</a></li>
+      <li><a href="index.html">合作</a></li>
+      <li><a href="https://jiangjiang-ai-office.vercel.app/index.html#about">關於我</a></li>
+    </ul>
+  </nav>
 
-<!-- TL;DR：一張卡片講完合作模式 -->
-<section style="padding:48px 0 0">
-  <div class="container">
-    <div class="tldr">
-      <h3>30 秒看懂</h3>
-      <div class="tldr-row">
-        <div class="k">場地</div>
-        <div class="v">在你的群、你的社團、你的社群開免費講座（線上為主）</div>
-        <div class="k">講師</div>
-        <div class="v">江江主講 ｜ 你揪團，內容客製給你的受眾</div>
-        <div class="k">講座</div>
-        <div class="v">1 小時 = 50 分鐘乾貨 + 10 分鐘 QA，不是大型推銷會</div>
-        <div class="k">課程</div>
-        <div class="v">講完推 1,000 元 AI 辦公室基礎應用課（<strong style="color:var(--accent)">幫你把基礎版 AI／Agent 工作流程設定好 + 帶你理解概念</strong>），後續 3,980 進階工作坊</div>
-        <div class="k">受眾</div>
-        <div class="v">主推有筆電的學員（電腦要能裝 Codex）；以手機為主的受眾，另有專屬合作路線</div>
-        <div class="k">理念</div>
-        <div class="v"><strong style="color:var(--accent)">不是教學員追 AI 工具，是讓 AI 學你</strong>——把知識累積在自己這邊，工具換了也不用重學</div>
-        <div class="k">金流</div>
-        <div class="v">使用 Portaly（傳送門）收款，分潤系統自動拆帳</div>
-        <div class="k">學員</div>
-        <div class="v"><strong style="color:var(--accent)">在你的主場上長大</strong>——關係跟著你走，我們在原有的服務線上做加法</div>
+  <!-- Hero -->
+  <section id="page-hero" class="hero">
+    <div class="container">
+      <h1>合作推廣計畫</h1>
+      <p class="tagline">我們一起升級</p>
+      <p class="sub"><strong>你用 AI 辦公室整理你的方法。</strong><br><strong>你的客戶用 AI 辦公室累積他的紀錄。</strong><br>兩邊合起來——做得到以前做不到的事。</p>
+      <div class="hero-cta">
+        <a href="#core" class="btn btn-primary">看核心邏輯</a>
+        <a href="#roles" class="btn">看三種合作角色</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="how">
-  <div class="container">
-    <h2>合作四步驟</h2>
-    <p class="section-lead">從聯絡到第一場講座開賣，最快兩週可以走完。</p>
+  <!-- 核心：互利共生 -->
+  <section id="core" class="section">
+    <div class="container">
+      <h2>核心邏輯：互利共生</h2>
+      <p class="section-lead">服務一起變強。分潤是這個結果產生之後的事。</p>
 
-    <div class="flow">
-      <div class="flow-step">
-        <div class="who">合辦對齊</div>
-        <h4>對齊主題與受眾</h4>
-        <p>聊一次：你受眾是誰、感興趣什麼、預計多少人。我把講座內容客製給你的群。</p>
-      </div>
-      <div class="flow-step">
-        <div class="who">你開講座</div>
-        <h4>在你群開免費講座</h4>
-        <p>線上 1 小時直播為主。江江主講網頁版 AI 跟桌面版 Agent 的差異，你的人聽。</p>
-      </div>
-      <div class="flow-step">
-        <div class="who">轉付費</div>
-        <h4>1,000 元基礎應用課轉單</h4>
-        <p>講完讓有興趣的人接著上 AI 辦公室基礎應用課。Portaly（傳送門）金流自動分潤。</p>
-      </div>
-      <div class="flow-step">
-        <div class="who">後續延伸</div>
-        <h4>進階課程再轉一次</h4>
-        <p>基礎應用課完想升級的人，可以再上 3,980 元進階專題工作坊。同樣分潤，你的服務線多一層延伸。</p>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <h5>① 你自己用</h5>
+          <p><strong>把你的專業整理成可重複的系統。</strong>你的知識框架、客戶判斷邏輯、做事方法，從「在你腦子裡」變成「AI 可協作的資產」。</p>
+        </div>
+        <div class="feature-item">
+          <h5>② 你的客戶也用</h5>
+          <p><strong>客戶累積自己的東西。</strong>客戶每天自己上手用——累積他的工作筆記、客戶資料、判斷紀錄。</p>
+        </div>
+        <div class="feature-item">
+          <h5>③ 兩邊結合</h5>
+          <p><strong>服務升級到新的層次。</strong>你跟客戶各自累積的東西結合起來，你能交付的價值，會跨越過去做不到的層級。</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="quote-box">
-      你經營社群，我帶課程進場。學員的信任跟著你走——我們在你的主場上<strong>做加法</strong>，你多一條 AI 服務軌道，而不是多一份管理負擔。
-    </div>
-  </div>
-</section>
+  <!-- 具體範例 -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>兩個具體範例</h2>
+      <p class="section-lead">已經在跑了。直接看真實案例。</p>
 
-<section>
-  <div class="container">
-    <h2>講座是什麼樣子的？</h2>
-    <p class="section-lead">不是業配講座，不是大型推銷會。一小時就是一小時的內容。</p>
+      <!-- 範例 1 -->
+      <div class="role-card">
+        <span class="role-badge">範例 1 · 身心靈療癒類</span>
+        <h3>身心靈療癒類老師 × 他的個案</h3>
 
-    <div class="quality-grid">
-      <div class="quality-card">
-        <div class="quality-num">1 <small>年</small></div>
-        <h4>線上講座經驗</h4>
-        <p>已在我自己社群連續一年、每月兩場免費線上講座。線上控場、互動節奏、QA 處理都熟。</p>
+        <div class="role-grid">
+          <div>
+            <h5>老師自己用</h5>
+            <p>把身心靈知識框架整理出來，<strong>給客人更好的報表</strong>。</p>
+          </div>
+          <div>
+            <h5>他的客人用</h5>
+            <p>累積<strong>情緒日記、心情日記、健康手環的身體數據</strong>。</p>
+          </div>
+          <div>
+            <h5>結合之後</h5>
+            <p>每月調理時，老師手上有<strong>更完整的「身體＋心情」整合分析</strong>。</p>
+          </div>
+        </div>
       </div>
-      <div class="quality-card">
-        <div class="quality-num">50 / 10</div>
-        <h4>講座時間配比</h4>
-        <p>1 小時講座 = 50 分鐘滿滿乾貨 + 10 分鐘 QA。最後幾分鐘才會稍微提到後續課程的可能性。</p>
-      </div>
-      <div class="quality-card">
-        <div class="quality-num">+ 1</div>
-        <h4>對揪團方是加分</h4>
-        <p>你為你的朋友、為你的社群找了一個優質的免費講座。學員聽完會覺得：「還好我老師找了這個。」</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="alt">
-  <div class="container">
-    <h2>為什麼不只是教 AI 工具？</h2>
-    <p class="section-lead">
-      AI 工具半年換一輪、學完就過時。<br>
-      <strong style="color:var(--accent)">我教的是讓你的知識變成 AI 能讀的資產——不是學工具去追 AI，是讓 AI 學你。</strong>
-    </p>
+      <!-- 範例 2 -->
+      <div class="role-card">
+        <span class="role-badge">範例 2 · 地方創生／教育類</span>
+        <h3>地方創生／教育類合作夥伴 × 在地組織網絡</h3>
 
-    <div style="max-width:880px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:24px">
-      <div class="case-card" style="opacity:.85">
-        <span class="case-tag" style="color:var(--muted);background:transparent;border-color:var(--subtle)">市場上多數做法</span>
-        <h4 style="color:var(--text-soft)">到處學 AI 工具</h4>
-        <ul>
-          <li>新工具一出就追著學</li>
-          <li>每個工具都重新摸一次</li>
-          <li>累積的東西散落不同平台</li>
-          <li>工具下架，學的也過時</li>
-        </ul>
-      </div>
-      <div class="case-card" style="border:1.5px solid var(--accent)">
-        <span class="case-tag">AI 辦公室的做法</span>
-        <h4>讓 AI 來學你</h4>
-        <ul>
-          <li>把你的知識整理在自己電腦</li>
-          <li>AI 讀你的檔案、跑你的工作流</li>
-          <li>累積的是你的資產，工具換了沒差</li>
-          <li>用你的口吻、你的判斷做事</li>
-        </ul>
+        <div class="role-grid">
+          <div>
+            <h5>合作夥伴自己用</h5>
+            <p>整理自己的<strong>培力框架</strong>，建立可重複使用的方法論。</p>
+          </div>
+          <div>
+            <h5>邀其他組織用</h5>
+            <p>在地組織的夥伴用 AI 辦公室寫<strong>報告、企劃、會議記錄、行程規劃</strong>。</p>
+          </div>
+          <div>
+            <h5>結合之後</h5>
+            <p>這些優秀規劃成果回饋給合作夥伴，他做<strong>更好的陪力評估、社會影響力報告</strong>。</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="products">
-  <div class="container">
-    <h2>合作夥伴可以推什麼</h2>
-    <p class="section-lead">三層產品線，從免費聚眾到進階工作坊。每一層都能單獨推，也能漏斗式串起來。</p>
+  <!-- 對的人是誰 -->
+  <section id="who" class="section">
+    <div class="container">
+      <h2>對的人是誰</h2>
+      <p class="section-lead">兩個畫像要看清楚。不要搞混。</p>
 
-    <div class="tier-row">
-      <div class="tier">
-        <div class="tier-step">第一層 ／ 入口</div>
-        <div class="tier-name">免費講座</div>
-        <div class="tier-price">免費 <small>／ 線上 60 分鐘</small></div>
-        <p class="tier-desc">在你的群開，江江主講「網頁版 AI 跟桌面版 Agent 的差異」，把對的人帶進來。</p>
-        <ul>
-          <li>內容依你受眾客製</li>
-          <li>線上直播為主，可實體</li>
-          <li>講完預告下一層基礎應用課</li>
-          <li>不收費、不抽成</li>
-        </ul>
+      <div class="role-card">
+        <span class="role-badge">畫像 A · 使用者</span>
+        <h3>誰會用 AI 辦公室</h3>
+
+        <div class="role-grid">
+          <div>
+            <h5>年齡與性別</h5>
+            <p><strong>40 歲上下的女性</strong>為主</p>
+            <p style="font-size: 12px; color: var(--text-soft); margin-top: 4px;">＊根據目前市場調查與用戶反饋的數據</p>
+          </div>
+          <div>
+            <h5>背景</h5>
+            <p>有專業、有經驗，<strong>用過 ChatGPT 覺得不錯，想進階</strong></p>
+          </div>
+          <div>
+            <h5>痛點</h5>
+            <p>不會用 Agent、不會做知識庫、<strong>知識資產累積不起來</strong></p>
+          </div>
+        </div>
+
+        <p style="margin-top: 12px; color: var(--text-soft);">公司主管、自由業、自己創業的人、教師、公務員——文書工作量大、有專業沉澱但沒系統的人。</p>
       </div>
 
-      <div class="tier featured">
-        <div class="tier-step">第二層 ★ 主推</div>
-        <div class="tier-name">AI 辦公室基礎應用課</div>
-        <div class="tier-price">1,000 <small>元 ／ 一次付清</small></div>
-        <p class="tier-desc">幫你把<strong>基礎版的 AI 工作流程、Agent 工作流程設定好</strong>，並帶你理解背後的概念。設定好之後，你能自己延伸後續工作流，整套 AI 助理、顧問都能繼續疊上去。</p>
-        <p style="background:#F5EDE5;padding:10px 14px;border-radius:8px;font-size:13px;color:var(--text-strong);margin:14px 0 10px;line-height:1.55"><strong>適用前提：</strong>學員的電腦能裝 Codex<br><span style="color:var(--muted);font-size:12.5px">江江會在課前協助確認，舊筆電可能無法</span></p>
-        <ul>
-          <li>環境設定（Codex / Claude Code）</li>
-          <li>基礎版 AI 工作流程設定</li>
-          <li>基礎版 Agent 工作流程設定</li>
-          <li>7 位 AI 助理一次到位</li>
-          <li>帶你理解概念，能自己延伸</li>
-          <li>半年內免費更新與技能包</li>
-          <li>分潤對半分</li>
-        </ul>
-      </div>
+      <div class="role-card">
+        <span class="role-badge">畫像 B · 合作夥伴</span>
+        <h3>誰會跟我合作推廣</h3>
 
-      <div class="tier">
-        <div class="tier-step">第三層 ／ 升級</div>
-        <div class="tier-name">進階專題工作坊</div>
-        <div class="tier-price">3,980 <small>元起 ／ 半天到一天</small></div>
-        <p class="tier-desc">基礎應用課之後的延伸。依你受眾需求量身設計專題——把 AI 直接整合進你跟你客戶之間的服務。</p>
-        <p style="background:#F5EDE5;padding:10px 14px;border-radius:8px;font-size:13px;color:var(--text-strong);margin:14px 0 10px;line-height:1.6"><strong>目前比較有可能的主題：</strong><br>· ESG 永續報告書工作坊<br>· 網頁設計專題<br>· 其他依合作對象討論</p>
-        <ul>
-          <li>3 小時版：3,980</li>
-          <li>5 小時版：5,980</li>
-          <li>同場附贈 1,000 基礎應用課</li>
-          <li>主題依你受眾客製設計</li>
-          <li>升級分潤另計</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="role-grid">
+          <div>
+            <h5>跳過</h5>
+            <p><strong>技術強的人。</strong>自己做就好，透過我反而麻煩。</p>
+          </div>
+          <div>
+            <h5>合適</h5>
+            <p>有自己的<strong>受眾、專業、領域</strong>，需要人幫你組工具鏈。</p>
+          </div>
+          <div>
+            <h5>能久走</h5>
+            <p>眼光看 3 年的人——想跟我一起打造生態圈。</p>
+          </div>
+        </div>
 
-<section class="alt">
-  <div class="container">
-    <h2>兩條合作路線</h2>
-    <p class="section-lead">看你受眾的硬體條件，挑一條入手——之後可以延伸。</p>
-
-    <div style="max-width:920px;margin:36px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:28px">
-      <div class="case-card" style="border:1.5px solid var(--accent);background:linear-gradient(180deg,#F5EDE5 0%,var(--card) 100%)">
-        <span class="case-tag">★ 路線 A ｜ 主推</span>
-        <h4>有筆電的受眾</h4>
-        <p style="color:var(--text-soft);font-size:14.5px;margin-bottom:14px;line-height:1.75">
-          <strong style="color:var(--text-strong)">主題：AI 辦公室基礎應用課程</strong><br>
-          幫你把<strong>基礎版的 AI 工作流程、Agent 工作流程設定好</strong>，並帶你理解背後的概念。設定好之後，整套 AI 助理、顧問都能繼續延伸。
-        </p>
-        <p style="background:rgba(255,255,255,.6);padding:10px 14px;border-radius:8px;font-size:13px;color:var(--text-strong);margin:14px 0;line-height:1.6">
-          <strong>適用前提：</strong>學員電腦能裝 Codex（課前江江會協助確認）
-        </p>
-        <p style="font-size:13.5px;color:var(--muted);margin-top:12px">課程定價：1,000 元 ／ 人</p>
-      </div>
-
-      <div class="case-card">
-        <span class="case-tag">路線 B ｜ 手機受眾</span>
-        <h4>以手機為主的受眾</h4>
-        <p style="color:var(--text-soft);font-size:14.5px;margin-bottom:14px;line-height:1.75">
-          <strong style="color:var(--text-strong)">主題：手機 + ChatGPT 專案應用課</strong><br>
-          以在地商家為例：手機商品攝影 + AI 修圖 + <strong>品牌資產累積</strong>。一支手機就能跑，不只是拍照修圖。
-        </p>
-        <p style="background:var(--bg-alt);padding:10px 14px;border-radius:8px;font-size:13px;color:var(--text-strong);margin:14px 0;line-height:1.6">
-          <strong>適用前提：</strong>受眾以手機為主，沒有筆電也能參與
-        </p>
-        <p style="font-size:13.5px;color:var(--muted);margin-top:12px">課程定價：依主題另議</p>
+        <div class="quote-block">
+          <p class="quote-text">「合作夥伴自己，剛好就是使用者畫像的代表。<br>他自己用了之後，就是他自己受眾的最佳示範。」</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <h2>已經在合作的方向</h2>
-    <p class="section-lead">
-      我希望跟揪團的講師有深度合作——不是辦一場就走，<br>
-      是讓我的課程延續你原本的服務，用 AI 放大你的亮點。
-    </p>
+  <!-- 三種合作角色 -->
+  <section id="roles" class="section section-alt">
+    <div class="container">
+      <h2>三種合作角色</h2>
+      <p class="section-lead">看哪一種最像你</p>
 
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="case-tag">在地商家／地方創生</span>
-        <h4>跟商家召集人合作</h4>
-        <ul>
-          <li>商家「手機 + AI」商品拍攝課</li>
-          <li>商家粉專行銷宣傳工作坊</li>
-          <li>商家自己做平面視覺設計</li>
-        </ul>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">身心靈／療癒</span>
-        <h4>跟身心靈老師合作</h4>
-        <ul>
-          <li>用 AI 寫情緒日記</li>
-          <li>客觀觀察自己的身心變化</li>
-          <li>客戶月報儀表板</li>
-        </ul>
-      </div>
-      <div class="case-card">
-        <span class="case-tag">教練／講師／顧問</span>
-        <h4>跟內容工作者合作</h4>
-        <ul>
-          <li>把講師原本的服務 AI 化</li>
-          <li>建客戶資料庫與 SOP</li>
-          <li>放大講師原有的內容亮點</li>
-        </ul>
-      </div>
-    </div>
+      <!-- 角色 1：揪團主 -->
+      <div class="role-card">
+        <span class="role-badge">角色 1</span>
+        <h3>揪團主</h3>
+        <p class="role-subtitle">有社群、想開始變現、但還沒有商品的人</p>
 
-    <div class="quote-box" style="margin-top:40px">
-      把 AI 直接導入你和你客戶之間——幫你把<strong>商業模式、產品、交付過程</strong>用 AI 優化。<br>
-      這是我跟一般「辦一場講座就走」的合作不一樣的地方。
-    </div>
-  </div>
-</section>
-
-<section id="split">
-  <div class="container">
-    <h2>分潤機制</h2>
-    <p class="section-lead">能分潤就分潤。Portaly（傳送門）金流自動拆帳，月底結算，透明清楚。</p>
-
-    <table class="split-table">
-      <thead>
-        <tr><th style="width:36%">合作角色</th><th style="width:34%">負責什麼</th><th>分潤</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>聯名揪團夥伴</strong><br><span style="font-size:13px;color:var(--muted)">社群主、社團、合作經銷商</span></td>
-          <td>免費講座聚眾<br>+ 1,000 元基礎應用課推廣</td>
-          <td><strong>對半分</strong><br><span style="font-size:13px;color:var(--muted)">500 / 500</span></td>
-        </tr>
-        <tr>
-          <td><strong>第一線實體助教</strong><br><span style="font-size:13px;color:var(--muted)">社區、咖啡廳實體現場協助</span></td>
-          <td>實體陪跑、現場處理問題</td>
-          <td>執行者 700 / 江江 300</td>
-        </tr>
-        <tr>
-          <td><strong>升級到進階課程</strong><br><span style="font-size:13px;color:var(--muted)">把基礎課學員引導到 3,980</span></td>
-          <td>協助轉換、課程說明</td>
-          <td>個案議定<br><span style="font-size:13px;color:var(--muted)">依推廣強度與貢獻度</span></td>
-        </tr>
-        <tr>
-          <td><strong>顧問接案介紹</strong><br><span style="font-size:13px;color:var(--muted)">中期組織建置、企業導入</span></td>
-          <td>引介企業客戶、把關需求</td>
-          <td>視專案規模另議</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p class="split-note">
-      初期先用「<strong>專案合作、拆帳拆帳</strong>」的彈性模式，沒有員工負擔，<br>
-      也不要求簽長期約。試合作、試看看、合得來再深入。
-    </p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="container">
-    <h2>適合的合作對象</h2>
-    <p class="section-lead">如果你有以下其中一種資源，歡迎找我聊。</p>
-
-    <div class="target-list">
-      <div class="target-card">
-        <h4>社群主／自媒體經營者</h4>
-        <p>群組裡有大量需要文書整理、品牌打造、AI 入門的會員。</p>
+        <div class="role-grid">
+          <div>
+            <h5>你要做</h5>
+            <p>揪團、聚眾、用你的社群引流到免費講座 → 1,000 元 AI 辦公室建置課</p>
+          </div>
+          <div>
+            <h5>我要做</h5>
+            <p>講座主題、課程設計、實際上課、課後客服、技術支援</p>
+          </div>
+          <div>
+            <h5>分潤</h5>
+            <p><strong>有分潤</strong>。透過 Portaly 聯合販賣自動結算。引導到進階課另計分潤。</p>
+          </div>
+        </div>
       </div>
-      <div class="target-card">
-        <h4>地方創生／教育社群</h4>
-        <p>田野心學、實驗教育、自學社群、USR 計畫主持人。</p>
+
+      <!-- 角色 2：共開特色課 -->
+      <div class="role-card">
+        <span class="role-badge">角色 2</span>
+        <h3>共開特色課</h3>
+        <p class="role-subtitle">有專業領域、想加上 AI 但不知道怎麼整合的人</p>
+
+        <div class="role-grid">
+          <div>
+            <h5>你要做</h5>
+            <p>你的專業內容、客戶痛點、真實案例——教育、身心靈、企業諮詢、地方創生、健管都行</p>
+          </div>
+          <div>
+            <h5>我要做</h5>
+            <p>把你的專業 + AI 辦公室組合成進階課線</p>
+          </div>
+          <div>
+            <h5>你拿到</h5>
+            <p>課程營收分潤、客戶儀表板系統使用權、共同講師署名、後續顧問案承接</p>
+          </div>
+        </div>
       </div>
-      <div class="target-card">
-        <h4>身心靈療癒／教練</h4>
-        <p>有穩定個案族群，想加 AI 工具讓客戶日常追蹤更好。</p>
-      </div>
-      <div class="target-card">
-        <h4>扶輪社／商會／社團</h4>
-        <p>會員多為自雇者、中小企業主、自由工作者。</p>
-      </div>
-      <div class="target-card">
-        <h4>企業顧問／引導師</h4>
-        <p>有企業客戶，想把 AI 應用做成可交付的方案。</p>
-      </div>
-      <div class="target-card">
-        <h4>物業／管委會／里長</h4>
-        <p>需要消化年度活動 KPI、政府補助案、社區共學。</p>
+
+      <!-- 角色 3：第一線陪跑 -->
+      <div class="role-card">
+        <span class="role-badge">角色 3</span>
+        <h3>第一線陪跑</h3>
+        <p class="role-subtitle">有實體場域、有人脈網絡、想把 AI 帶到「不會自己裝的人」面前</p>
+
+        <div class="role-grid">
+          <div>
+            <h5>你要做</h5>
+            <p>實體裝機陪跑、開實體裝機派對（社區、物業、商會）、後續基礎諮詢</p>
+          </div>
+          <div>
+            <h5>我要做</h5>
+            <p>培訓、後端系統設計、複雜問題支援、進階課程承接</p>
+          </div>
+          <div>
+            <h5>分潤</h5>
+            <p><strong>有分潤</strong>（依據實體裝機案件結算）。客戶轉進階另計分潤。</p>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <h2>常見問題</h2>
+  <!-- 三層產品線 -->
+  <section class="section">
+    <div class="container">
+      <h2>三種課程種類</h2>
+      <p class="section-lead">從免費講座到進階工作坊，每一層都可以合辦</p>
 
-    <div class="faq">
-      <details>
-        <summary>合作夥伴需要會 AI 嗎？</summary>
-        <p>不需要會 AI、不需要架網站、不需要先準備教材。你只負責揪團、開講座入口；課程設計、Portaly 金流、發票稅務、技術交付都由江江處理。</p>
-      </details>
-      <details>
-        <summary>講座會大量推銷後續課程嗎？</summary>
-        <p>不會。我講座的時間配比固定是 50 分鐘乾貨 + 10 分鐘 QA，最後幾分鐘才會稍微提到後續課程的可能性。我已經在自己社群連續一年、每月兩場免費線上講座，乾貨密度是經得起檢驗的——你為你的社群找了一個優質講座，這對你是加分，不是消耗信任。</p>
-      </details>
-      <details>
-        <summary>合作可以延伸到單次講座以外嗎？</summary>
-        <p>可以、而且我希望這樣。我不只想辦一場講座就走——我希望我的課程能延續你原本的服務。例如跟在地商家召集人合開「商家手機 + AI 拍攝課」、「商家粉專行銷工作坊」；跟身心靈老師合開「用 AI 寫情緒日記」「客戶月報儀表板」。把 AI 直接導入你跟你客戶之間，幫你把商業模式、產品、交付過程用 AI 優化。</p>
-      </details>
-      <details>
-        <summary>Portaly（傳送門）金流怎麼運作？分潤可靠嗎？</summary>
-        <p>Portaly（傳送門）是台灣本土金流團隊，可以開電子發票、處理稅務、分潤可設定到不同帳號。每筆訂單系統自動拆分，月底結算。江江已用兩年多，穩定可靠。</p>
-      </details>
-      <details>
-        <summary>合作之後，學員跟我的關係會怎麼變？</summary>
-        <p>更深。學員從你的群進來，從你這裡聽到 AI 講座，回去也還是你的群成員——你多了一個能跟他們聊的話題、多了一條可以服務他們的線。江江負責內容跟課程交付，你保留你經營出來的關係，雙方在自己擅長的事情上各自加值。</p>
-      </details>
-      <details>
-        <summary>網頁版 AI 跟桌面版 Agent 差在哪？</summary>
-        <p>網頁版 AI（ChatGPT、Gemini 那些）是聊天機器人，你跟它聊天問東西。桌面版 Agent 是真的進到你電腦裡的數位員工——它讀你的檔案、跑你的工作流、用你的口吻說話。免費講座會帶你受眾完整理解這兩件事。</p>
-      </details>
-      <details>
-        <summary>1,000 元基礎應用課大概多久？包什麼？</summary>
-        <p>線上課程約 2-3 小時。內容包含：①&nbsp;環境設定（Codex / Claude Code）②&nbsp;<strong>幫你把基礎版的 AI 工作流程、Agent 工作流程設定好</strong>③&nbsp;<strong>帶你理解背後的概念</strong>，讓你能自己延伸 ④&nbsp;7 位 AI 助理一次到位 ⑤&nbsp;第一份輸出實作 ⑥&nbsp;半年內免費更新。<strong>前提是學員的電腦能裝 Codex</strong>——江江會在課前協助確認硬體條件。</p>
-      </details>
-      <details>
-        <summary>學員電腦太舊裝不了 Codex 怎麼辦？</summary>
-        <p>這是「基礎應用課」要先確認的事。「裝機」這個詞容易讓人以為「我帶筆電來，江江都能幫我裝好」——其實不行。前提是<strong>學員自己的電腦能跑 Codex</strong>，環境設定才能進場；舊筆電可能跑不動。我會在課前協助你的學員評估，避免到現場才發現裝不了的尷尬。</p>
-      </details>
-      <details>
-        <summary>我的受眾以手機為主，沒筆電怎麼合作？</summary>
-        <p>有對應的路線 B：「手機 + ChatGPT 專案應用課」。例如跟在地商家合作的「手機商品攝影 + AI 修圖 + 品牌資產累積」——一支手機就能跑。長期來說我還是建議要有電腦才能完整累積知識資產，但短期手機就能起步。</p>
-      </details>
-      <details>
-        <summary>為什麼不直接教 AI 工具，要講「讓 AI 學我」這種概念？</summary>
-        <p>因為 AI 工具半年換一輪。今天學的 ChatGPT 用法，半年後可能換 Gemini、後年又換新的；如果只學工具，等於每半年都要重學。我教的是讓你把知識整理在自己這邊、變成 AI 能讀的資產——工具換了，你的知識庫還在。這就是 AI 辦公室的核心，也是合作能延續、能累積、不會過時的原因。</p>
-      </details>
-      <details>
-        <summary>3,980 進階工作坊上什麼？</summary>
-        <p>依合作夥伴需求調整。目前已規劃的特色課：給老闆的 AI 駕馭策略課（5 小時／5,980）、自己重做品牌網站＋識別系統、用 AI 做客戶儀表板與情緒日記分析。也可以依你受眾的痛點開新主題。</p>
-      </details>
-      <details>
-        <summary>第一場講座要多久才能開？</summary>
-        <p>最快兩週。對齊主題（1 次聊天）→ 你揪團（1 週）→ 講座開賣（1 週推廣）→ 線上開講。實體場可能要再加 1 週調場地。</p>
-      </details>
-      <details>
-        <summary>怎麼開始？</summary>
-        <p>找江江聊一次。我們先確認你受眾、感興趣的主題、預計人數。對齊後排第一場免費講座當試水溫，效果好再擴大合作。沒有合約綁定，先試一場。</p>
-      </details>
+      <div class="team-grid">
+        <div class="staff-card">
+          <span class="role-badge">第一層</span>
+          <h4>免費講座</h4>
+          <p><strong>0 元</strong>｜線上 1 小時</p>
+          <p>主題依合辦夥伴客群調：情緒日記、品牌識別、NPO 的 ESG 報告書⋯</p>
+        </div>
+        <div class="staff-card highlight-card">
+          <span class="role-badge">第二層</span>
+          <h4>AI 辦公室 設置課</h4>
+          <p><strong>1,000 元</strong>｜線上課程 兩小時 預錄好的</p>
+          <p>原本叫「裝機」，現在改叫<strong>設置</strong>。入場條件：電腦能下載 Codex。</p>
+        </div>
+        <div class="staff-card">
+          <span class="role-badge">第三層</span>
+          <h4>進階工作坊</h4>
+          <p><strong>3,980 元起</strong>（5 小時版 5,980）</p>
+          <p>網站、品牌、客戶儀表板、ESG 報告書——直接做出來</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <div class="container">
-    <h2>想聊聊聯名合作？</h2>
-    <p class="lead">
-      不論你是社群主、教練、顧問、扶輪社夥伴、地方創生社群，<br>
-      只要你有受眾、想做點不一樣的合作，都歡迎找我。
-    </p>
-    <p style="font-size:15px;color:var(--muted);margin-top:8px">聯絡方式稍後補上</p>
-    <p class="footer-meta">
-      AI 辦公室 ｜ 聯名講座 聯合推廣計劃<br>
-      江江教練主理<br>
-      <span style="opacity:.6">v1.8 ｜ 2026-05-07</span>
-    </p>
-  </div>
-</footer>
+  <!-- 常見疑慮：我會被複製走嗎 -->
+  <section id="concern" class="section">
+    <div class="container">
+      <h2>常見疑慮：我會被複製走嗎？</h2>
+      <p class="section-lead">三層回答。看你的擔心是哪一層。</p>
+
+      <div class="role-card">
+        <h3>第一層</h3>
+        <p style="font-size: 18px; color: var(--text-strong);"><strong>技能包是「當下認知」的快照。</strong></p>
+        <p>你還會成長、你會迭代。<strong>永遠走在技能包前面的，是你自己這個人。</strong></p>
+      </div>
+
+      <div class="role-card">
+        <h3>第二層</h3>
+        <p style="font-size: 18px; color: var(--text-strong);"><strong>別人頂多用到 8 成。</strong></p>
+        <p>就算別人拿到你的技能包，用了之後會改成他自己的版本，會長出他的味道。<br><strong>沒有人能完整複製你。</strong></p>
+      </div>
+
+      <div class="role-card">
+        <h3>第三層</h3>
+        <p style="font-size: 18px; color: var(--text-strong);"><strong>面對現實：市場上比你厲害的人，遲早會做技能包，甚至會開源。</strong></p>
+        <p>與其等到那時候被動跟，不如<strong>早一點把你的版本分享出去</strong>，建立「這個領域的領先者」位置。</p>
+        <p style="margin-top: 12px;">你的領先位置——<br><strong>來自於你比別人早走一步、走得更深。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 洽談合作 -->
+  <section class="section section-alt" style="text-align: center;">
+    <div class="container">
+      <h2>洽談合作</h2>
+      <p class="section-lead" style="margin-bottom: 24px;">想聊聊合作的可能性，歡迎透過官方帳號與我聯繫。</p>
+      <div class="hero-cta" style="justify-content: center;">
+        <a href="https://line.me/R/ti/p/@713kczfc" target="_blank" rel="noopener" class="btn btn-primary">LINE 官方帳號 聯繫</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-main">江江教練 · 江昱德</p>
+      <p class="footer-sub">流水的 AI，鐵打的知識。</p>
+    </div>
+  </footer>
 
 </body>
 </html>
